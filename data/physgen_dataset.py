@@ -106,8 +106,8 @@ class PhysGenDataset(Dataset):
         # target_img = resize_tensor_to_divisible_by_14(target_img)
 
         # add fake rgb
-        if input_img.shape[0] == 1:  # shape (B, 1, H, W)
-            input_img = input_img.repeat(3, 1, 1)  # make it (B, 3, H, W)
+        # if input_img.shape[0] == 1:  # shape (B, 1, H, W)
+        #     input_img = input_img.repeat(3, 1, 1)  # make it (B, 3, H, W)
 
         if self.output_type == "complex_only":
             base_simulation_img = resize_tensor_to_divisible_by_14(self.transform(self.basesimulation_dataset[idx]["soundmap"]))
